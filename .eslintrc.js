@@ -28,11 +28,19 @@ module.exports = {
     // 第三方插件
     plugins: ['react', '@typescript-eslint/eslint-plugin'],
     // 规则配置
-    ignorePatterns: ['build/*', 'config/*', 'scripts/*', 'package-lock.json', 'package.json'],
+    ignorePatterns: [
+        'build/*',
+        'config/*',
+        'scripts/*',
+        'package-lock.json',
+        'package.json',
+        '*.less',
+        '*.css'
+    ],
     rules: {
         semi: 0,
         'no-unused-vars': [
-            2,
+            1,
             {
                 vars: 'all',
                 args: 'after-used',

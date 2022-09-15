@@ -16,6 +16,7 @@ module.exports = {
         rules: [
             {
                 test: /.(ts|tsx)$/, // 匹配.ts, tsx文件
+                include: [path.resolve(__dirname, '../src')],
                 use: {
                     loader: 'babel-loader',
                     options: {
@@ -26,7 +27,7 @@ module.exports = {
             },
             {
                 test: /.(css|less)$/, // 匹配 css 文件
-                include: [path.resolve(__dirname, '../src')],
+                // include: [path.resolve(__dirname, '../src')],
                 use: [
                     isDev ? 'style-loader' : MiniCssExtractPlugin.loader,
                     'css-loader',
@@ -34,7 +35,20 @@ module.exports = {
                         loader: 'postcss-loader',
                         options: { postcssOptions: { plugins: ['autoprefixer'] } }
                     },
-                    'less-loader'
+                    {
+                        loader: 'less-loader',
+                        options: {
+                            lessOptions: {
+                                modifyVars: {
+                                    // 'primary-color': '#CA3142',
+                                    // 'link-color': '#CA3142',
+                                    // 'border-radius-base': '2px',
+                                    'font-size-base': '14px'
+                                },
+                                javascriptEnabled: true
+                            }
+                        }
+                    }
                 ] // 开发环境使用style-looader,打包模式抽离css (css和less可以分开test)
             },
             {
