@@ -16,9 +16,9 @@ module.exports = {
             // /api/users
             // http://localhost:4000/api/users
             // https://api.github.com/api/users
-            '/api': {
-                target: 'https://api.github.com',
-                pathRewrite: { '^/api': '' }, // http://localhost:8080/api/users -> https://api.github.com/users
+            '/ajaxurl': {
+                target: 'http://localhost:7001',
+                pathRewrite: { '^/ajaxurl': '/' }, // http://localhost:8080/api/users -> https://api.github.com/users
                 changeOrigin: true // 修改host为代理的
             }
         }
