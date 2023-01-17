@@ -1,7 +1,7 @@
 import React from 'react';
 import { RouterList } from './router';
 import { BrowserRouter } from 'react-router-dom';
-import '../public/flash/flash.js';
+// import '../public/flash/flash.js';
 import './app.less';
 import 'antd/dist/antd.css';
 

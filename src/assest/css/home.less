@@ -1,26 +1,72 @@
-.my-header {
-    display: table-cell;
-    width: 100%;
-    vertical-align: middle;
+.my-home {
+    .my-header {
+        display: table-cell;
+        width: 100%;
+        vertical-align: middle;
 
-    .text-content {
-        position: relative;
-        width: 80%;
-        max-width: 800px;
-        padding: 10px;
-        margin: auto;
-        font-family: Playball, cursive;
-        color: #fff;
+        .text-content {
+            position: relative;
+            width: 80%;
+            max-width: 800px;
+            padding: 10px;
+            margin: auto;
+            font-family: Playball, cursive;
+            color: #fff;
+            text-align: center;
+            text-shadow: 3px 3px 3px rgb(0 0 0 / 45%);
+
+            .my-title {
+                font-size: 3.5rem;
+                font-weight: 700;
+            }
+
+            .my-introduction {
+                font-size: 2rem;
+            }
+        }
+    }
+
+    .go-listpage {
+        position: absolute;
+        bottom: 45px;
+        left: 50%;
+        z-index: 100;
+        display: block;
+        width: 34px;
+        height: 34px;
+        margin-left: -16px;
+        font-size: 34px;
         text-align: center;
-        text-shadow: 3px 3px 3px rgb(0 0 0 / 45%);
+        text-decoration: none !important;
+        transform: rotate(0deg);
+        animation: bounce 4s 2s infinite;
 
-        .my-title {
-            font-size: 3.5rem;
-            font-weight: 700;
+        @keyframes bounce {
+            0%,
+            10%,
+            25%,
+            40%,
+            50% {
+                /* -webkit-transform: translateY(0) rotate(-90deg); */
+                transform: translateY(0) rotate(0deg);
+            }
+
+            20% {
+                /* -webkit-transform: translateY(-10px) rotate(-90deg); */
+                transform: translateY(-10px) rotate(0deg);
+            }
+
+            30% {
+                /* -webkit-transform: translateY(-5px) rotate(-90deg); */
+                transform: translateY(-5px) rotate(0deg);
+            }
         }
 
-        .my-introduction {
-            font-size: 2rem;
+        .go-icon {
+            position: relative;
+            bottom: 7px;
+            font-size: 34px !important;
+            color: rgb(255 255 255 / 60%);
         }
     }
 }

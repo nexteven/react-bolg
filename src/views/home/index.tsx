@@ -4,6 +4,7 @@ import FooterContent from '../../commponet/footer';
 import { homeInfoSearch } from '../../hooks/homeInfoSearch';
 import '../../assest/css/home.less';
 import httpRequest from '../../axios/axios';
+import { DownOutlined } from '@ant-design/icons';
 
 interface data {
     title: String;
@@ -28,7 +29,7 @@ class Home extends React.Component {
     };
     render() {
         return (
-            <div>
+            <div className="my-home">
                 <NavHearder>
                     <div className="my-header">
                         <div className="text-content">
@@ -37,6 +38,9 @@ class Home extends React.Component {
                         </div>
                     </div>
                 </NavHearder>
+                <a className="go-listpage">
+                    <DownOutlined className="go-icon" />
+                </a>
                 <FooterContent />
             </div>
         );
